@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-grid>
+        <ion-row align-items-center>  
+          <ion-col padding size-lg="3">
+            <ion-row justify-content-start align-items-center>
+              SGQ Luiz Vitor                                
+            </ion-row> 
+          </ion-col>
+          <ion-col padding size-lg="3" push-lg="6">
+            <ion-row justify-content-end>
+              <ion-button  expand="block" (click)="sair()">Sair</ion-button>
+            </ion-row>
+          </ion-col> 
+          <ion-col padding size-lg="6" pull-lg="3">
+            <ion-segment [(ngModel)]="menuSegment" scrollable>
+                <ion-segment-button value="home" id="home" (click)="navigate('home')">
+                  <ion-label>Inicio</ion-label>
+                </ion-segment-button>
+                <ion-segment-button value="incidentes" id="incidentes" (click)="navigate('incidentes')">
+                  <ion-label>Incidentes</ion-label>
+                </ion-segment-button>
+                <ion-segment-button value="divulgacao" id="divulgacao" (click)="navigate('divulgacao')" checked>
+                  <ion-label>Divulgação</ion-label>
+                </ion-segment-button>
+            </ion-segment>           
+          </ion-col>          
+        </ion-row>
+      </ion-grid>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+
+    <ion-row>
+      <ion-col>
+        <div padding>Divulgacao</div>
+      </ion-col>
+      <ion-col padding size-lg="4">
+          <ion-button expand="block" (click)="exportComunicadoExterno()">
+              Exportar comunicados externos
+            </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <kendo-grid [data]="gridData" [height]="380"
+    [pageable]="{
+      buttonCount: buttonCount,
+      info: info,
+      type: type,
+      pageSizes: [5, 10, 20],
+      previousNext: previousNext
+    }"
+    [pageSize]="10">
+      <kendo-grid-column field="dataHora" title="Data" width="240"></kendo-grid-column>
+      <kendo-grid-column field="titulo" title="Titulo" width="240"></kendo-grid-column>
+      <kendo-grid-column field="divulgadoInternamente" title="Divulgado Internamente" width="180">
+          <ng-template kendoGridCellTemplate let-dataItem>
+              <input type="checkbox" [checked]="dataItem.divulgadoInternamente" disabled/>
+          </ng-template>
+      </kendo-grid-column>
+      <kendo-grid-column field="divulgadoExternamente" title="Divulgado Externamente" width="180">
+          <ng-template kendoGridCellTemplate let-dataItem>
+              <input type="checkbox" [checked]="dataItem.divulgadoExternamente" disabled/>
+          </ng-template>
+      </kendo-grid-column>
+  </kendo-grid>
+</ion-content> 
+<ion-footer>
+  <ion-grid>
+    <ion-row justify-content-center>
+        SGQ Luiz Vitor                   
+      </ion-row>
+      </ion-grid>
+</ion-footer>

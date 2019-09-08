@@ -1,0 +1,73 @@
+<ion-content padding>
+<ion-grid>
+    <ion-row justify-content-center>
+        <ion-col size-xl="6">
+            <ion-card LoginCard>
+                <ion-card-content> 
+                    <ion-row justify-content-center class="customFont">
+                            <ion-col padding size-xl="4" class="ion-text-center">
+                                SGQ Luiz Vitor
+                            </ion-col>                                
+                        </ion-row>
+                    <ion-row justify-content-center>
+                        <ion-col size-xs="4" size-md="2">
+                            <ion-img [src]="logoPositiva"></ion-img>
+                        </ion-col>                                
+                    </ion-row>
+                    <form [formGroup]="loginForm">
+                            <ion-row justify-content-center> 
+                                <ion-col size-md="8">
+                                        <ion-label class="grey">Email</ion-label>
+                                        <ion-input 
+                                            LoginInput 
+                                            class="text_box"
+                                            type="text" 
+                                            formControlName="email" 
+                                            placeholder="Digite aqui seu email">
+                                        </ion-input>
+                                        <div class="validation-errors">
+                                            <ng-container *ngFor="let validation of validation_messages.email">
+                                                <div class="error-message" *ngIf="loginForm.get('email').hasError(validation.type) && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+                                                    <i class="icon ion-md-information-circle-outline"></i> {{ validation.message }}
+                                                </div>
+                                            </ng-container>
+                                        </div>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row justify-content-center>
+                                <ion-col size-md="8">
+                                        <ion-label class="grey">Senha</ion-label>
+                                        <ion-input 
+                                            LoginInput 
+                                            class="text_box"
+                                            type="password" 
+                                            formControlName="senha" 
+                                            placeholder="Digite aqui sua senha">
+                                        </ion-input>
+                                        <div class="validation-errors">
+                                            <ng-container *ngFor="let validation of validation_messages.senha">
+                                                <div class="error-message" *ngIf="loginForm.get('senha').hasError(validation.type) && (loginForm.get('senha').dirty || loginForm.get('senha').touched)">
+                                                    <i class="icon ion-md-information-circle-outline"></i> {{ validation.message }}
+                                                </div>
+                                            </ng-container>
+                                        </div>
+                                </ion-col>
+                            </ion-row>
+                        </form>
+                        <ion-row justify-content-center>
+                            <ion-col size-md="8">
+                                <ion-button color="one-blue" 
+                                    class="submit-btn" 
+                                    expand="block"
+                                    (click)="login()"
+                                    [disabled]="!loginForm.valid">
+                                    Entrar
+                                    </ion-button>
+                                    </ion-col>
+                        </ion-row>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>            
+        </ion-row>
+    </ion-grid>
+</ion-content>

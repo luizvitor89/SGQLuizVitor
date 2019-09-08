@@ -1,0 +1,137 @@
+<form [formGroup]="createIncidenteForm" (ngSubmit)="createIncidente()">
+    <ion-toolbar>
+      <ion-title>Novo incidente</ion-title>
+      <ion-buttons slot="primary">
+        <ion-button (click)="closeModal()">
+          <i class="icon ion-md-close" slot="icon-only" style="zoom:1.5;"></i>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+
+    <div padding>
+        <ion-row justify-content-center class="ion-padding-top">
+            <ion-col size-md="6">
+              <ion-row>
+                <ion-col>
+                    <ion-label style="color: #808080;">Tipo Ocorrencia </ion-label>
+                </ion-col>
+                <ion-col>
+                    <kendo-dropdownlist
+                    formControlName="tipoOcorrenciaId" 
+                    [data]="tipoOcorrenciaModel"
+                    [textField]="'tipo'"
+                    [valueField]="'tipoOcorrenciaId'">
+                  </kendo-dropdownlist>
+                  </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col size-md="6">
+                <ion-col>
+                    <ion-label style="color: #808080;">Insumo </ion-label>
+                </ion-col>
+                <ion-col>
+                    <kendo-dropdownlist
+                      formControlName="insumoId" 
+                      [data]="insumoModel"
+                      [textField]="'tipo'"
+                      [valueField]="'insumoId'">
+                    </kendo-dropdownlist>
+                </ion-col>
+              </ion-col>
+          </ion-row>
+        
+            <ion-row justify-content-center class="ion-padding-top">
+              <ion-col size-md="6">
+                <ion-row>
+                  <ion-col>
+                      <ion-label style="color: #808080;">Setor </ion-label>
+                  </ion-col>
+                  <ion-col>
+                      <kendo-dropdownlist
+                        formControlName="setorId" 
+                        [data]="setorModel"
+                        [textField]="'nome'"
+                        [valueField]="'setorId'">
+                      </kendo-dropdownlist>
+                    </ion-col>
+                </ion-row>
+              </ion-col>
+              <ion-col size-md="6">
+                  <ion-col>
+                      <ion-label style="color: #808080;">Status </ion-label>
+                  </ion-col>
+                  <ion-col>
+                      <kendo-dropdownlist
+                        formControlName="statusId" 
+                        [data]="statusModel"
+                        [textField]="'nome'"
+                        [valueField]="'statusId'">
+                      </kendo-dropdownlist>
+                  </ion-col>
+                </ion-col>
+            </ion-row>
+        
+        <ion-row justify-content-center class="ion-padding-top">
+          <ion-col size-md="6">
+            <ion-label style="color: #808080;">Titulo</ion-label>
+            <ion-input
+              CustomInput
+              class="text_box" 
+              type="text"
+              formControlName="titulo" 
+              placeholder="Digite aqui o titulo"
+            >
+            </ion-input>
+          </ion-col>
+          <ion-col size-md="6">
+              <ion-label style="color: #808080;">Prioridade</ion-label>
+              <ion-input
+                CustomInput
+                class="text_box" 
+                type="text"
+                formControlName="prioridade" 
+                placeholder="1 a 100"
+              >
+              </ion-input>
+            </ion-col>
+        </ion-row>
+    
+        <ion-row justify-content-center class="ion-padding-top">
+            <ion-col>
+              <ion-label style="color: #808080;">Descrição</ion-label>
+              <ion-input
+                CustomInput
+                class="text_box" 
+                type="text"
+                formControlName="descricao" 
+                placeholder="Digite aqui a descrição"
+              >
+              </ion-input>
+            </ion-col>
+            <ion-col>
+                <ion-label style="color: #808080;">Consequencias</ion-label>
+                <ion-input
+                  CustomInput
+                  class="text_box" 
+                  type="text"
+                  formControlName="consequencias" 
+                  placeholder="Digite aqui as consequencias"
+                >
+                </ion-input>
+              </ion-col>
+          </ion-row>
+    </div>
+      
+    <ion-row justify-content-center>
+      <ion-col size-md="6">
+        <ion-button 
+          class="submit-btn" 
+          expand="block" 
+          type="submit" 
+          [disabled]="!createIncidenteForm.valid"
+        >
+          Criar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>

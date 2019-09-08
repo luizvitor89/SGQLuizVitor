@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-grid>
+        <ion-row align-items-center>  
+          <ion-col padding size-lg="3">
+            <ion-row justify-content-start align-items-center>
+              SGQ Luiz Vitor                                
+            </ion-row> 
+          </ion-col>
+          <ion-col padding size-lg="3" push-lg="6">
+            <ion-row justify-content-end>
+              <ion-button  expand="block" (click)="sair()">Sair</ion-button>
+            </ion-row>
+          </ion-col> 
+          <ion-col padding size-lg="6" pull-lg="3">
+            <ion-segment [(ngModel)]="menuSegment" scrollable>
+                <ion-segment-button value="home" id="home" (click)="navigate('home')" checked>
+                  <ion-label>Inicio</ion-label>
+                </ion-segment-button>
+                <ion-segment-button value="incidentes" id="incidentes" (click)="navigate('incidentes')">
+                  <ion-label>Incidentes</ion-label>
+                </ion-segment-button>
+                <ion-segment-button value="divulgacao" id="divulgacao" (click)="navigate('divulgacao')">
+                  <ion-label>Divulgação</ion-label>
+                </ion-segment-button>
+            </ion-segment>           
+          </ion-col>          
+        </ion-row>
+      </ion-grid>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  Sistema de Gestão de Qualidade desenvolvido por Luiz Vitor, como TCC de Arquitetura de Software Distribuido, Puc Minas.  
+</ion-content> 
+<ion-footer>
+  <ion-grid>
+    <ion-row justify-content-center>
+        SGQ Luiz Vitor                   
+      </ion-row>
+      </ion-grid>
+</ion-footer>

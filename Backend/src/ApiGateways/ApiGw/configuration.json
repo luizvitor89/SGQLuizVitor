@@ -1,0 +1,29 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "dt.api",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/dt/{everything}",
+      "UpstreamHttpMethod": []
+    },
+    {
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "cip.api",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/cip/{everything}",
+      "UpstreamHttpMethod": []
+    }
+  ],
+  "GlobalConfiguration": {}
+}

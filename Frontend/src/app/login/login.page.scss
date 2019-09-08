@@ -1,0 +1,46 @@
+ion-card[LoginCard] {
+    background-color: white;
+}
+
+ion-input[LoginInput] {
+    text-align: start;
+    color: #808080;
+}
+
+.text_box {
+    object-fit: contain;
+    border: 1px solid #808080;
+    border-radius: 10px;
+}
+
+.ion-color-one-btn {
+  --ion-color-base: #d3d3d3;
+  --ion-color-base-rgb: 211,211,211;
+  --ion-color-contrast: #616161;
+  --ion-color-contrast-rgb: 97,97,97;
+  --ion-color-shade: #dfdfdf;
+  --ion-color-tint: #dfdfdf;
+}
+
+.ion-color-one-blue {
+    --ion-color-base: #0d1fa0;
+    --ion-color-base-rgb: 13,31,160;
+    --ion-color-contrast: white;
+    --ion-color-contrast-rgb: 255,255,255;
+    --ion-color-shade: #0d1faf;
+    --ion-color-tint: #0d1faf;
+}
+
+
+.imgLogo {
+    height: 50px; 
+    width: 50px;
+}
+
+.grey {
+    color: #808080;
+}
+
+.cursorPointer {
+    cursor: pointer;
+}

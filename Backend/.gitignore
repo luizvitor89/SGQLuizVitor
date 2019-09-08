@@ -1,0 +1,19 @@
+﻿################################################################################
+# Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/bin
+/obj
+/src/ApiGateways/ApiGw/bin
+/src/ApiGateways/ApiGw/obj
+/src/Services/CIP/CIP.API/bin
+/src/Services/CIP/CIP.API/obj
+/src/Services/DT/DT.API/bin
+/src/Services/DT/DT.API/obj
+/src/BuildingBlocks/EventBus/EventBus/bin/Release/netstandard2.0
+/src/BuildingBlocks/EventBus/EventBus/obj
+/src/BuildingBlocks/EventBus/EventBusRabbitMQ/bin/Release/netstandard2.0
+/src/BuildingBlocks/EventBus/EventBusRabbitMQ/obj
+/src/BuildingBlocks/EventBus/EventBus/bin/Debug/netstandard2.0
+/src/BuildingBlocks/EventBus/EventBusRabbitMQ/bin/Debug/netstandard2.0
